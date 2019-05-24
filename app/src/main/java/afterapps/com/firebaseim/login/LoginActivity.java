@@ -183,6 +183,8 @@ public class LoginActivity extends AppCompatActivity {
     public void attemptGoogleSignIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
+        mGoogleApiClient.connect();
         showProgress();
+
     }
 }
